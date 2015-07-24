@@ -5,14 +5,17 @@ import (
         "runtime"
         "github.com/juleinschmit/httprouter"
         )
-        
-func main() {
-  
+     
+func init() {
+  initConfig()        
+
   cpuCount := runtime.NumCPU()
   runtime.GOMAXPROCS(cpuCount)
   
+}
+   
+func main() {
   router := httprouter.New()
-  
   http.ListenAndServe(":"+ config.Serve.Port, router)
 
 }

@@ -13,6 +13,6 @@ func main() {
   
   router := httprouter.New()
   
-  http.ListenAndServe(":"+ config.PORT, router)
+  http.ListenAndServe(":"+ config.Serve.Port, router)
 
 }

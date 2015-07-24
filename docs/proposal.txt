@@ -1,0 +1,4 @@
+Discussion on Davidsnd.
+
+The idea of this application is to have a centralised place to keep track of various campaigns stats, XP for users, and also have
+dice roller for enemy characters.

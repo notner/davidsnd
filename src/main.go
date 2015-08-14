@@ -1,21 +1,20 @@
 package main
 
 import (
+		"fmt"
         "net/http"
         "runtime"
-        "github.com/juleinschmit/httprouter"
+        "github.com/julienschmidt/httprouter"
         )
      
-func init() {
-  initConfig()        
+func main() {
+  InitConfig()        
 
   cpuCount := runtime.NumCPU()
   runtime.GOMAXPROCS(cpuCount)
   
-}
-   
-func main() {
-  router := httprouter.New()
-  http.ListenAndServe(":"+ config.Serve.Port, router)
 
+  router := httprouter.New()
+  router.GET("/dice", GetDice)
+  http.ListenAndServe(":"+ "1234", router)
 }
